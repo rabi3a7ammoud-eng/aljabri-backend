@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('language_code', 5);
             $table->string('title');
             $table->text('description')->nullable();
-            $table->unique(['review_setting_id', 'language_code']);
+            $table->unique(['review_setting_id', 'language_code'], 'review_trans_lang_unique');
             $table->timestamps();
         });
     }

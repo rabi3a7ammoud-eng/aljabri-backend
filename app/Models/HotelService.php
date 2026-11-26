@@ -13,6 +13,11 @@ class HotelService extends Model
         'price',
         'is_active',
     ];
+protected $casts = [
+    'is_active' => 'boolean',
+    'price' => 'decimal:2',
+];
+
     public function translations()
 {
     return $this->hasMany(HotelServiceTranslation::class);

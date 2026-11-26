@@ -21,6 +21,8 @@ class RoomQrController extends Controller
         $writer = new PngWriter();
         $result = $writer->write($qrCode);
 
+        file_put_contents(storage_path('app/room-qr-test.png'), $result->getString());
+        
         return response($result->getString())
             ->header('Content-Type', $result->getMimeType());
     }
